@@ -16,16 +16,25 @@ public abstract class Visitor {
 		// Damit in den Unterklassen beim rekursiven Aufruf
 		// kein Compilerfehler auftritt, müssen wir den
 		// Aufruf hier explizit delegieren
-		if(expression instanceof Number)
+		if (expression instanceof Number) {
 			return visit((Number) expression);
-		if(expression instanceof Addition)
+		}
+		
+		if (expression instanceof Addition) {
 			return visit((Addition) expression);
-		if(expression instanceof Subtraction)
+		}
+		
+		if (expression instanceof Subtraction) {
 			return visit((Subtraction) expression);
-		if(expression instanceof Multiplication)
+		}
+		
+		if (expression instanceof Multiplication) {
 			return visit((Multiplication) expression);
-		if(expression instanceof Division)
+		}
+		
+		if (expression instanceof Division) {
 			return visit((Division) expression);
+		}
 		
 		throw new IllegalStateException();
 	}
